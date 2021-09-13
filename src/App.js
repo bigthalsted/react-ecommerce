@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,30 +9,28 @@ import {
 
 export default function App() {
   return (
-    <Router>
+    <Router className="Homepage">
       <div>
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">untitled</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/shop">shop</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/cart">cart</Link>
             </li>
           </ul>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/shop">
+            <Shop />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/cart">
+            <Cart />
           </Route>
           <Route path="/">
             <Home />
@@ -43,13 +42,13 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2>home</h2>;
 }
 
-function About() {
-  return <h2>About</h2>;
+function Shop() {
+  return <h2>SHOP</h2>;
 }
 
-function Users() {
-  return <h2>Users</h2>;
+function Cart() {
+  return <h2>CART</h2>;
 }
