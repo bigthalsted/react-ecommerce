@@ -1,5 +1,5 @@
 import React from 'react';
-import BackgroundSection from '../BackgroundSection';
+import BackgroundSection from '../components/BackgroundSection/BackgroundSection';
 
 function Home() {
   return (
