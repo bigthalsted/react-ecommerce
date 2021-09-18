@@ -1,12 +1,16 @@
 import React from 'react';
 import './BackgroundSection.scss';
+import ReactPlayer from 'react-player';
 
 function BackgroundSection() {
   return (
-    <div className="background-container">
-      <video src="/images/video-2.mp4" autoPlay loop muted />
-      <p>featured items</p>
-    </div>
+    <ReactPlayer
+      width="100%"
+      height="100%"
+      url="https://vimeo.com/607570099"
+      autoplay
+      background
+    />
   );
 }
 
