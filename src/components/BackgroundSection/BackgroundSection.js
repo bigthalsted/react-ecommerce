@@ -7,9 +7,11 @@ function BackgroundSection() {
     <ReactPlayer
       width="100%"
       height="100%"
-      url="https://vimeo.com/607570099"
-      autoplay
-      background
+      url="https://youtu.be/_qLnyuWfGf8"
+      muted
+      playing
+      loop
+      controls={false}
     />
   );
 }
