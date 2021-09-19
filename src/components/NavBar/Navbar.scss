@@ -6,6 +6,8 @@
   height: 100px;
   background-color: transparent;
   padding: 10px 20px;
+  position: fixed;
+  top: 0
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Roboto+Mono&display=swap');
@@ -17,9 +19,9 @@
 @import url(//db.onlinewebfonts.com/c/2545d122b16126676225a5b52283ae23?family=VCR+OSD+Mono);
 .navbar-shop {
  font-family: "VCR OSD Mono", 'Roboto Mono', monospace;
-  font-size: 17px;
+  font-size: 15px;
 }
 .navbar-bag {
   font-family: "VCR OSD Mono", 'Roboto Mono', monospace;
-  font-size: 17px;
+  font-size: 15px;
 }
