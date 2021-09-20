@@ -17,8 +17,8 @@ function Card() {
     <div className="card">
       <div className="card-body">
         <img src={Placeholder} alt="clothing" className="card__image" />
-        <h2 className="card__name">PRODUCT NAME</h2>
-        <p className="card__price">$100</p>
+        <p className="card__name">PRODUCT NAME</p>
+        <p className="card__price">PRICE</p>
       </div>
     </div>
   );

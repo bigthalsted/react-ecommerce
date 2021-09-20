@@ -40,9 +40,15 @@ body{
 
     &__name{
         padding:1rem;
+        text-align: center;
+        font-size: 15px;
+        color:grey
     }
     &__price{
         padding: 0 1rem;
+        text-align: center;
+        color: grey;
+        font-size: 15px;
     }
 
 }
