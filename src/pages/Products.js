@@ -1,13 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Placeholder from '../assets/images/placeholder-img.png';
 import './Products.scss';
 
 function Products() {
   return (
     <div className="wrapper">
-      <Card />
-      <Card />
-      <Card />
+      <Link to="/product/TH01234">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </Link>
     </div>
   );
 }
