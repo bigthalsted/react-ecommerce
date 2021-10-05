@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import BackgroundSection from '../components/BackgroundSection/BackgroundSection';
-
 import Navbar from '../components/NavBar/Navbar';
 import ProductDetail from '../pages/ProductDetail';
 import Products from '../pages/Products';
