@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductData from '../ProductData.json';
+import data from '../data.json';
 import ProductItem from '../components/ProductItem/ProductItem';
 import placeholder from '../assets/images/placeholder-img.png';
 import './Products.scss';
@@ -15,7 +15,7 @@ function ProductsList() {
 function Card() {
   return (
     <div className="card">
-      {ProductData.map((item) => (
+      {data.map((item) => (
         <ProductItem
           key={item.id}
           name={item.name}
