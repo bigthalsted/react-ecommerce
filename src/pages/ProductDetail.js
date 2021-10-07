@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Placeholder from '../assets/images/placeholder-img.png';
+import '../data.json';
 
 function ProductDetail() {
   return (
