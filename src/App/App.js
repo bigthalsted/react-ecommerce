@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import BackgroundSection from '../components/BackgroundSection/BackgroundSection';
 import Navbar from '../components/NavBar/Navbar';
 import ProductDetail from '../pages/ProductDetail';
-import Products from '../pages/Products';
+import ProductsList from '../pages/ProductsList';
 import './App.scss';
 
 function App() {
@@ -16,10 +16,10 @@ function App() {
           <Route path="/" exact />
         </Switch>
         <Switch>
-          <Route path="/shop" exact component={Products} />
+          <Route path="/shop" exact component={ProductsList} />
         </Switch>
         <Switch>
-          <Route path="/product/TH01234" exact component={ProductDetail} />
+          <Route path="/product/:id" exact component={ProductDetail} />
         </Switch>
       </Router>
     </div>
