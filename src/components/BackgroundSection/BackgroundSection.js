@@ -7,7 +7,7 @@ function BackgroundSection() {
     <ReactPlayer
       width="100%"
       height="100%"
-      url="https://youtu.be/_qLnyuWfGf8"
+      url=""
       muted
       playing
       loop

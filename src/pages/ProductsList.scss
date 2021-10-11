@@ -34,24 +34,22 @@ body{
     margin-right: 50px;
     margin-left: 50px;
 
-    &__image{
-        height: 12rem;
-        width: 100%;
-        object-fit: cover;
     }
 
-    &__name{
-        padding:1rem;
-        text-align: center;
-        font-size: 15px;
-        color:grey
-    }
-    &__price{
-        padding: 0 rem;
-        text-align: center;
-        color: grey;
-        font-size: 15px;
-    }
-
+.products-list img {
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
 }
-
+.products-list title {
+    padding:1rem;
+    text-align: center;
+    font-size: 15px;
+    color:grey
+}
+.products-list price {
+    padding: 0 rem;
+    text-align: center;
+    color: grey;
+    font-size: 15px;
+}
