@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Product from '../components/ProductItem/Product';
 import Filter from '../Filter';
-import './ProductsList.scss';
 
 const API_URL = 'https://fakestoreapi.com/products';
 
@@ -12,7 +11,7 @@ export default function ProductsList() {
   const getProducts = async () => {
     try {
       const res = await fetch(API_URL);
-      const product = await res.json();
+      const products = await res.json();
       setProducts(products);
     } catch (e) {
       console.error(e);
@@ -24,7 +23,7 @@ export default function ProductsList() {
   }, []);
 
   return (
-    <div className="card">
+    <div>
       <Filter filter={filter} setFilter={setFilter} />
       <ul className="products-list">
         {products

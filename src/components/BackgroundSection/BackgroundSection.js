@@ -1,18 +1,13 @@
 import React from 'react';
 import './BackgroundSection.scss';
-import ReactPlayer from 'react-player';
+import Untitled from './Untitled.mp4';
+
 
 function BackgroundSection() {
   return (
-    <ReactPlayer
-      width="100%"
-      height="100%"
-      url=""
-      muted
-      playing
-      loop
-      controls={false}
-    />
+<video className='background-video' autoPlay loop muted >
+    <source src={Untitled} type='video/mp4' />
+</video>
   );
 }
 
