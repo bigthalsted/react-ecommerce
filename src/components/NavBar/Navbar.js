@@ -14,9 +14,8 @@ function Navbar() {
         <Link to="/" className="navbar-logo">
           site-name*
         </Link>
-
         <Link to="/bag" className="navbar-bag">
-          BAG
+          BAG 1
         </Link>
       </nav>
     </>

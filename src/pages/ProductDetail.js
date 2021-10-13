@@ -6,6 +6,7 @@ const BASE_URL = 'https://fakestoreapi.com/products/';
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
+  const [buttonText, setButtonText] = useState("ADD TO CART");
 
   const getProduct = async () => {
     try {
@@ -29,7 +30,7 @@ function ProductDetail() {
       <h2>{product.title}</h2>
       <h2>{`$${product.price}`}</h2>
       <p>{product.description}</p>
-      <button type="submit">ADD TO CART</button>
+      <button onClick={() => setButtonText("ADDED TO CART")}>{buttonText}</button>
     </div>
   );
 }
