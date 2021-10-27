@@ -8,7 +8,7 @@ function Product({ product }) {
       <Link to={`/product/${product.id}`}>
         <img src={product.image} alt={`${product.title}`} />
         <h3>{product.title}</h3>
-        <h3>{`'$'${product.price}`}</h3>
+        <h3>${product.price}</h3>
       </Link>
     </li>
   );
