@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addBasket } from '../redux/actions/addAction';
 
 const BASE_URL = 'https://fakestoreapi.com/products/';
 
-function ProductDetail() {
+function ProductDetail(props) {
+  console.log(props);
   const { id } = useParams();
   const [product, setProduct] = useState([]);
 
@@ -27,11 +30,11 @@ function ProductDetail() {
     <div>
       <img src={product.image} alt={`${product.title}`} />
       <h2>{product.title}</h2>
-      <h2>{`$${product.price}`}</h2>
+      <h2>${product.price}</h2>
       <p>{product.description}</p>
-      <button type="submit">ADD TO CART</button>
+      <button type="submit" onClick={() =>props.addBasket(`${product.id}`)}>Add to cart</button>
     </div>
   );
 }
 
-export default ProductDetail;
+export default connect(null, { addBasket})(ProductDetail);
