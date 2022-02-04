@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addBasket } from '../redux/actions/addAction';
+import { addToCart } from '../actions/addAction'
 
 const BASE_URL = 'https://fakestoreapi.com/products/';
 
@@ -27,14 +27,13 @@ function ProductDetail(props) {
   if (!product.title) return null;
 
   return (
-    <div>
+    <div className="products-list">
       <img src={product.image} alt={`${product.title}`} />
-      <h2>{product.title}</h2>
+      <h2>{product.title.toUpperCase()}</h2>
       <h2>${product.price}</h2>
-      <p>{product.description}</p>
-      <button type="submit" onClick={() =>props.addBasket(`${product.id}`)}>Add to cart</button>
+      <button onClick={() => props.addToCart(product.id)}>ADD TO CART</button>
     </div>
   );
 }
 
-export default connect(null, { addBasket})(ProductDetail);
+export default connect(null, { addToCart })(ProductDetail);

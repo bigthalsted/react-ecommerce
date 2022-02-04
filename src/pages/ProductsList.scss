@@ -1,5 +1,5 @@
 @import url(//db.onlinewebfonts.com/c/2545d122b16126676225a5b52283ae23?family=VCR+OSD+Mono);
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 $radius: 0.2rem;
 
 *,
@@ -8,48 +8,16 @@ $radius: 0.2rem;
     box-sizing: border-box;
     margin-bottom: 10px;
     padding: 0;
-    font-family: "VCR OSD Mono"
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
 }
 
 body{
-    font-family: "VCR OSD Mono";
     margin: 2rem;
 }
 
-.wrapper {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,
-    minmax(12rem,16rem));
-    gap:2rem;
-    justify-content: center;
+.products-list {
+    position: relative;
+    top : 150px; 
 }
 
-.card{
-    overflow:hidden;
-    border-radius: $radius;
-    display:flex;
-    flex-direction:column ;
-    justify-content: space-between;
-    cursor: pointer;
-    margin-right: 50px;
-    margin-left: 50px;
-
-    }
-
-.products-list img {
-    height: 12rem;
-    width: 100%;
-    object-fit: cover;
-}
-.products-list title {
-    padding:1rem;
-    text-align: center;
-    font-size: 15px;
-    color:grey
-}
-.products-list price {
-    padding: 0 rem;
-    text-align: center;
-    color: grey;
-    font-size: 15px;
-}

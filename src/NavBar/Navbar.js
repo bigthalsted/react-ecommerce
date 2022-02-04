@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import getNumbers from '../redux/actions/getAction';
-import { connect } from 'react-redux';
 import './Navbar.scss';
+import { connect } from 'react-redux';
+import { getNumbers } from '../actions/getAction'
 
 function Navbar(props) {
+  console.log(props)
 
-useEffect(() => {
+  useEffect(() => {
     getNumbers();
-}, [])
+  },[])
 
   return (
     <>
@@ -17,10 +18,10 @@ useEffect(() => {
           SHOP
         </Link>
         <Link to="/" className="navbar-logo">
-          site-name*
+          site-name
         </Link>
         <Link to="/cart" className="navbar-bag">
-          CART <span>{props.basketProps.basketNumbers}</span>
+          CART <span>{props.cartProps.cartCount}</span>
         </Link>
       </nav>
     </>
@@ -28,7 +29,7 @@ useEffect(() => {
 }
 
 const mapStateToProps = state => ({
-  basketProps: state.basketState,
+  cartProps : state.cartState
 });
 
 export default connect(mapStateToProps, { getNumbers })(Navbar);

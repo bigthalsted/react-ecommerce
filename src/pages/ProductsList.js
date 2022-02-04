@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import './ProductsList.scss';
 import Product from '../components/ProductItem/Product';
-import Filter from '../Filter';
 
-const API_URL = 'https://fakestoreapi.com/products';
+const API_URL = 'https://fakestoreapi.com/products?limit=4';
 
 export default function ProductsList() {
-  const [filter, setFilter] = useState('');
   const [products, setProducts] = useState([]);
 
   const getProducts = async () => {
@@ -24,12 +23,8 @@ export default function ProductsList() {
 
   return (
     <div>
-      <Filter filter={filter} setFilter={setFilter} />
       <ul className="products-list">
         {products
-          .filter((product) =>
-            product.title.toLowerCase().includes(filter.toLowerCase())
-          )
           .map((product) => (
             <Product key={product.id} product={product} />
           ))}
