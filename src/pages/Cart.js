@@ -3,23 +3,22 @@ import './Cart.scss'
 import { connect } from 'react-redux'
 
 function Cart({cartProps}) {
-    console.log(cartProps)
+    
 
     let productsInCart = [];
 
     Object.keys(cartProps.products).forEach( function(item) {
-        console.log(item)
-        console.log(cartProps.products[item].inCart)
+        
         if(cartProps.products[item].inCart) {
             productsInCart.push(cartProps.products[item])
         }
-        console.log(productsInCart)
     })
 
     productsInCart = productsInCart.map( (product, index) => {
         return(
-            <Fragment>
+            <Fragment key={index}>
                 <div className='product'>
+                <img src={product.image} alt={`${product.title}`} />
                     <span className='sm-hide'>{product.name}</span>
                 </div>
                 <div className='price sm-hide'>${product.price}</div>

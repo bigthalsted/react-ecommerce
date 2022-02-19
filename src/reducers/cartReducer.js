@@ -12,7 +12,7 @@ const initialState = {
         },
         2 : {
             name: "MENS CASUAL PREMIUM SLIM FIT T-SHIRTS",
-            price: 22.3,
+            price: 22.30,
             numbers: 0,
             inCart: false
         },
@@ -32,19 +32,20 @@ const initialState = {
 }
 
 function cartReducer(state = initialState, action) {
+    let selectedProduct = ""
     switch(action.type) {
         case ADD_TO_CART :
-            let addQuantity = {...state.products[action.payload]}
-            addQuantity.numbers += 1
-            addQuantity.inCart = true
-            console.log(addQuantity)
+            selectedProduct = {...state.products[action.payload]}
+            selectedProduct.numbers += 1
+            selectedProduct.inCart = true
+            
             return {
                 ...state,
                 cartCount : state.cartCount + 1,
                 cartCost : state.cartCost + state.products[action.payload].price,
                 products: {
                     ...state.products,
-                    [action.payload]: addQuantity
+                    [action.payload]: selectedProduct
                 }
             }
         case GET_CART_QUANTITY:

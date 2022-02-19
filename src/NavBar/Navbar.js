@@ -2,13 +2,11 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 import { connect } from 'react-redux';
-import { getNumbers } from '../actions/getAction'
+import { getCartQuantity } from '../actions/getCartQuantity'
 
 function Navbar(props) {
-  console.log(props)
-
   useEffect(() => {
-    getNumbers();
+    getCartQuantity();
   },[])
 
   return (
@@ -32,4 +30,4 @@ const mapStateToProps = state => ({
   cartProps : state.cartState
 });
 
-export default connect(mapStateToProps, { getNumbers })(Navbar);
+export default connect(mapStateToProps, { getCartQuantity })(Navbar);
