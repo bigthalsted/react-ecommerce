@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addToCart } from '../actions/addAction'
+import { addToCart } from '../actions/addToCart'
 
 const BASE_URL = 'https://fakestoreapi.com/products/';
 
 function ProductDetail(props) {
-  console.log(props);
   const { id } = useParams();
   const [product, setProduct] = useState([]);
 
@@ -31,6 +30,7 @@ function ProductDetail(props) {
       <img src={product.image} alt={`${product.title}`} />
       <h2>{product.title.toUpperCase()}</h2>
       <h2>${product.price}</h2>
+      <h5>QUANTITY</h5>
       <button onClick={() => props.addToCart(product.id)}>ADD TO CART</button>
     </div>
   );

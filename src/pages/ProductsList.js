@@ -1,25 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import './ProductsList.scss';
 import Product from '../components/ProductItem/Product';
+import { getProductsFromAPI } from '../thunks/getProducts';
 
-const API_URL = 'https://fakestoreapi.com/products?limit=4';
-
-export default function ProductsList() {
-  const [products, setProducts] = useState([]);
-
-  const getProducts = async () => {
-    try {
-      const res = await fetch(API_URL);
-      const products = await res.json();
-      setProducts(products);
-    } catch (e) {
-      console.error(e);
-    }
-  };
+ function ProductsList({getProducts, products}) {
+  
+  console.log('ProductsList Props', products)
 
   useEffect(() => {
-    getProducts();
-  }, []);
+    getProducts()
+  }, [getProducts])
 
   return (
     <div>
@@ -32,3 +23,16 @@ export default function ProductsList() {
     </div>
   );
 }
+
+const mapStateToProps = ({productState}) => {
+  console.log('state', productState)
+  return {
+    products: productState.products
+  }
+}
+
+const mapDispatchToProps = {
+   getProducts: getProductsFromAPI
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsList)
