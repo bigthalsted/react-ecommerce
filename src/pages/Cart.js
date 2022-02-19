@@ -2,12 +2,12 @@ import React, { Fragment } from 'react'
 import './Cart.scss'
 import { connect } from 'react-redux'
 
-function Cart({cartProps}) {
+function Cart({cartProps, products}) {
     
 
     let productsInCart = [];
 
-    Object.keys(cartProps.products).forEach( function(item) {
+    Object.keys(products).forEach( function(item) {
         
         if(cartProps.products[item].inCart) {
             productsInCart.push(cartProps.products[item])
@@ -51,7 +51,8 @@ function Cart({cartProps}) {
 }
 
 const mapStateToProps = state => ({
-    cartProps : state.cartState
+    cartProps: state.cartState,
+    products: state.productState.products
 })
 
 export default connect(mapStateToProps)(Cart)

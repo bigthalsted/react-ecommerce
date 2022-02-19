@@ -1,7 +1,7 @@
 import { GET_PRODUCTS_SUCCESS } from '../actions/getProducts';
 
 const initialState = {
-    products: null
+    products: [],
 }
 
 function productsReducer(state = initialState, action) {
@@ -11,7 +11,7 @@ function productsReducer(state = initialState, action) {
         const { data } = action.payload
             return {
                 ...state,
-                products : data
+                products: [...data]
             }
 
         default : 
@@ -19,4 +19,4 @@ function productsReducer(state = initialState, action) {
     }
 }
 
-export default productsReducer
+export default productsReducer  

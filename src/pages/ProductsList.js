@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './ProductsList.scss';
 import Product from '../components/ProductItem/Product';
 import { getProductsFromAPI } from '../thunks/getProducts';
 
- function ProductsList(props) {
-  const [products, setProducts] = useState([]);
-  console.log('ProductsList Props', props.products)
+ function ProductsList({getProducts, products}) {
+  
+  console.log('ProductsList Props', products)
 
   useEffect(() => {
-    props.getProducts()
-  }, [])
+    getProducts()
+  }, [getProducts])
 
   return (
     <div>
